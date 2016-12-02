@@ -5,9 +5,7 @@ The practice project for IoT consulting team. Builds on Augur's decentralized pr
 * Create a wrapper for Augur’s source code
   * Possibly a modified version of the augur.js wrapper
 * Switch the oracle interaction within the source code to sensor data input for the purpose of executing smart contracts 
-  * 
 * Create an API so that sensors can connect and interact with the smart contracts created within Augur
-  *
 
 # Resources
 * [Augur doccumentation](http://docs.augur.net/#overview)
