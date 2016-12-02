@@ -4,7 +4,7 @@ The practice project for IoT consulting team. Builds on Augur's decentralized pr
 # Need to do
 * Create a wrapper for Augur’s source code
   * Possibly a modified version of the augur.js wrapper
-* Switch the oracle interaction within the source code to sensor data input for the purpose of executing smart contracts 
+* Switch the oracle interaction within the source code to sensor data input for the purpose of executing smart contracts
 * Create an API so that sensors can connect and interact with the smart contracts created within Augur
 
 # Resources
@@ -13,3 +13,6 @@ The practice project for IoT consulting team. Builds on Augur's decentralized pr
 * [Article on consensus in Augur](http://augur.strikingly.com/blog/a-decentralized-lie-detector)
 * [Video on distributed oracles](https://www.youtube.com/watch?v=V1Z7GZrvt24)
 * [Video on reputation tokens](https://www.youtube.com/watch?v=sCms-snzHk4)
+
+# Slide Deck
+http://bit.ly/2gThaMI
