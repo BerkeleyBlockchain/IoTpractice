@@ -8,11 +8,11 @@ contract smartsensor{
 		sensor3val = sensor3;
 	}
 	function isLightsOff() constant returns (bool){
-		if(sensor1 > 0 && sensor2 > 0){
+		if(sensor1val > 0 && sensor2val> 0){
 			return true;
-		}else if(sensor3 > 0 && sensor2 > 0){
+		}else if(sensor3val > 0 && sensor2val > 0){
 			return true;
-		}else if(sensor1 > 0 && sensor2 > 0){
+		}else if(sensor1val > 0 && sensor2val > 0){
 			return true;
 		}else{
 			return false;
