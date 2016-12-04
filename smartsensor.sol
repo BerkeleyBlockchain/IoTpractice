@@ -18,4 +18,11 @@ contract smartsensor{
 			return false;
 		}
 	}
+
+	function changeValues(uint sensor1,uint sensor2, uint sensor3){
+		sensor1val = sensor1;
+		sensor2val = sensor2;
+		sensor3val = sensor3;
+
+	}
 }
