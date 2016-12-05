@@ -1,20 +1,22 @@
-import threading
+limport threading
 import time
 from flask import Flask, jsonify
 import os
 import serial
-import glob
+
 app = Flask(__name__)
-# device="/dev/tty.usbmodem1411"
-# ser = serial.Serial(device, 9600, timeout=5)
+device="/dev/tty.usbmodem1411"
+ser = serial.Serial(device, 9600, timeout=5)
+
+def parse_line(line=""):
+	return line.split()
+
 class Threading(object):
     """ Threading example class
     The run() method will be started and it will run in the background
     until the application exits.
     """
     d = {"s1": 0, "s2": 0, "s3": 0}
-    # current_slide = 1
-    # url = ''
 
     def __init__(self, interval=1):
         """ Constructor
@@ -30,9 +32,9 @@ class Threading(object):
         """ Method that runs forever """
         x = 0
         while True:
-            x +=1
-            if x == 15:
-                self.d["s1"], self.d["s2"], self.d["s3"] = 1, 1, 1
+        	data = parse_line(ser.readline())
+        	if len(data) == 3:
+            	self.d["s1"], self.d["s2"], self.d["s3"] = data[0], data[1], data[2]
             time.sleep(self.interval)
 
             # Do something
