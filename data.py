@@ -21,7 +21,7 @@ class Threading(object):
     """
     d = {"s1": 0, "s2": 0, "s3": 0}
 
-    def __init__(self, interval=1):
+    def __init__(self, interval=0.01):
         """ Constructor
         :type interval: int
         :param interval: Check interval, in seconds
@@ -36,7 +36,7 @@ class Threading(object):
         x = 0
         while True:
             data = parse_line(ser.readline())
-            print(data)
+            # print(data)
             if len(data) == 3:
                 self.d["s1"], self.d["s2"], self.d["s3"] = data[0], data[1], data[2]
             time.sleep(self.interval)
@@ -50,9 +50,13 @@ data = Threading()
 def display():
     return jsonify(data.d)
 
-@app.route('/viewer/')
+@app.route('/consensus/')
 def viewer():
-    return None
+    x =[1 if int(data.d[y])>800 else 0 for y in data.d] # lights on - 1, lights off - 0
+    if sum(x) < 2:
+        return "Help, I am in the dark :("
+    else:
+        return "Haha! it is still light out!"
 
 time.sleep(3)
 print('Checkpoint')
