@@ -1,4 +1,4 @@
-limport threading
+import threading
 import time
 from flask import Flask, jsonify
 import os
@@ -9,7 +9,10 @@ device="/dev/tty.usbmodem1411"
 ser = serial.Serial(device, 9600, timeout=5)
 
 def parse_line(line=""):
-	return line.split()
+    line = str(line)
+    line = line[2:]
+    line = line[:-5]
+    return line.split()
 
 class Threading(object):
     """ Threading example class
@@ -32,9 +35,10 @@ class Threading(object):
         """ Method that runs forever """
         x = 0
         while True:
-        	data = parse_line(ser.readline())
-        	if len(data) == 3:
-            	self.d["s1"], self.d["s2"], self.d["s3"] = data[0], data[1], data[2]
+            data = parse_line(ser.readline())
+            print(data)
+            if len(data) == 3:
+                self.d["s1"], self.d["s2"], self.d["s3"] = data[0], data[1], data[2]
             time.sleep(self.interval)
 
             # Do something
