@@ -23,11 +23,13 @@ void loop() {
   sensor3 = analogRead(sensorPin3);
 
   //print values to serial monitor
-  Serial.print("Raw Sensor Values \t Sensor 1: ");
+//  Serial.print("Raw Sensor Values \t Sensor 1: ");
   Serial.print(sensor1);
-  Serial.print(" \t Sensor 2: ");
+  Serial.print(" ");
+//  Serial.print(" \t Sensor 2: ");
   Serial.print(sensor2);
-  Serial.print(" \t Sensor 3: ");
+  Serial.print(" ");
+//  Serial.print(" \t Sensor 3: ");
   Serial.println(sensor3);
   delay(1000);
 }
